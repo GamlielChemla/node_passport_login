@@ -11,16 +11,18 @@ const app = express();
 require('./config/passport')(passport);
 
 // DB Config
-const db = require('./config/keys').mongoURI;
+// const db = require('./config/keys').mongoURI;
+
+const mongoURI = 'mongodb://127.0.0.1/passport';
+
 
 // Connect to MongoDB
-mongoose
-  .connect(
-    db,
+mongoose.connect(
+  mongoURI,
     { useNewUrlParser: true }
   )
   .then(() => console.log('MongoDB Connected'))
-  .catch(err => console.log(err));
+  .catch(err => console.log("non coneceter",err));
 
 // EJS
 app.use(expressLayouts);

@@ -1,3 +1,3 @@
 module.exports = {
-  mongoURI: 'ADD_MONGO_URI_HERE'
-};
+   mongoURI = 'mongodb://127.0.0.1'
+}
